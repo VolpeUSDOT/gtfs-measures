@@ -1,14 +1,8 @@
-**Multimodal GTFS Measures**
-============================
+# Multimodal GTFS Measures: GTFS/ARNOLD Snapping Process
 
-**GTFS/ARNOLD Snapping Process**
-================================
+3 May 2017
 
-**3 May 2017**
-==============
-
-Introduction
-============
+## Introduction
 
 The goal of this series of scripts is to snap GTFS bus shape points to FHWA’s ARNOLD (All Roads Network of Linear referenced Data) in order to capture Highway Performance Monitoring System (HPMS) data such as Annual Average Daily Traffic (AADT) along transit routes, and calculate transit trip frequency along the road network. The base of analysis is the shapes.txt GTFS file, a tabular representation of all the geospatial points that make up a linear transit network. Each point in the shapes.txt file is associated with a shape ID (essentially a unique transit travel path). A shape ID (hereinafter referred to as a route shape) is in turn associated with a route ID. Typically there is at least one route shape per route direction (e.g. inbound/outbound) and additional route shapes if the route’s path varies depending on time of day, day of week, etc. To understand the level of transit service along a particular road corridor, we need to attach all transit trips that traverse that corridor to one “master” geospatial dataset, which eliminates any inconsistencies in the GTFS route shape data and ensures that route shapes that overlap snap to a consistent geospatial dataset. We choose ARNOLD because it is a national “all roads” dataset that linear references to valuable HPMS data that is submitted by the state DOTs.
 
@@ -16,13 +10,11 @@ The goal of this series of scripts is to snap GTFS bus shape points to FHWA’s 
 
 Figure 1 – Hypothetical example of why snapping to a road network (e.g. ARNOLD) is needed
 
-Technical Documentation
-=======================
+## Technical Documentation
 
 The code developed for this project is designed to work with the 32-bit or 64-bit ArcGIS installation of Python 2.7 and also requires ArcGIS 10.3 (code has also been tested successfully on ArcGIS 10.4). One non-standard Python library is also required and must be installed before use: PyGTFS. PyGFTS documentation is available here: <https://github.com/jarondl/pygtfs>
 
-Script 0: GTFS Ingest
-=====================
+## Script 0: GTFS Ingest
 
 **Description:** Converts a GTFS Feed into a SQLite database that can be read by ArcGIS and/or easily queried by programs such as DB Browser for SQLite.
 
@@ -32,8 +24,7 @@ Script 0: GTFS Ingest
 
 **Caveats:** The code requires PyGTFS to be installed before use. The code does not currently work with the Bureau of Transportation Statistics (BTS) National Transit Map (NTM) data as NTM does not use the same column names as the GTFS standard used by PyGTFS plug-in. Agency-based GTFS feeds must be used instead.
 
-Script 1: GTFS-ARNOLD Merge
-===========================
+## Script 1: GTFS-ARNOLD Merge
 
 **Description:** Associates GTFS route data with the ARNOLD Road network.
 
@@ -81,8 +72,7 @@ Script 1: GTFS-ARNOLD Merge
 
 **Caveats:** Does not currently function with transit systems that traverse more than one state. Code is also limited to bus routes and excludes rail and other transit routes which do not run along roads.
 
-Script 2: GTFS-ARNOLD Stops
-===========================
+## Script 2: GTFS-ARNOLD Stops
 
 **Description:** Extracts stops from GTFS feed, converts to geospatial format, linear references stops to ARNOLD network, and splits ARNOLD network at stops.
 
@@ -90,8 +80,7 @@ Script 2: GTFS-ARNOLD Stops
 
 sqlite\_file: SQLite file containing the transit system’s GTFS Data (created in Step 0)
 
-Script 3: GTFS-ARNOLD Reflow
-============================
+## Script 3: GTFS-ARNOLD Reflow
 
 **Description:** Repeats a significant portion of Step 1—this time incorporating each route’s series of stops and the road network that is now split at each stop.
 
@@ -105,8 +94,7 @@ Script 3: GTFS-ARNOLD Reflow
 
 -   **calc\_location\_tol\_2**: Tolerance used to snap GTFS route shape points to an ARNOLD edge (adjustable, 5 meters default)
 
-Script 4: GTFS-ARNOLD Arc Level
-===============================
+## Script 4: GTFS-ARNOLD Arc Level
 
 **Description:** Allows user to calculate frequency along ARNOLD segments for a particular day in a GTFS feed, using trip frequency. Ultimate output in GIS format is called “flow\_result”.
 
@@ -124,8 +112,7 @@ Script 4: GTFS-ARNOLD Arc Level
 
 **Caveats:** Note that the user must properly set the date used in the code. The user must examine the GTFS feed to determine which day represents a typical weekday (or other service of interest) within the transit system’s GTFS feed.
 
-Outputs
-=======
+## Outputs
 
 -   **gtfs\_arnold\_prelim.gdb**
 
@@ -151,8 +138,7 @@ Outputs
 
     -   **flow\_result:** a line feature class containing the frequency of transit routes along an ARNOLD route segment, along with the AADT (if available) and other calculated measures based on the GTFS feed/ridership data
 
-Potential Future Improvements
-=============================
+## Potential Future Improvements
 
 -   Coordinate with FHWA to improve ARNOLD data where gaps and deficiencies exist
 
