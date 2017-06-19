@@ -6,7 +6,7 @@
 # Edited:      Stephen Zitzow-Childs
 #
 # Created:     9/12/2016
-# Updated:     4/27/2017
+# Updated:     6/18/2017
 #
 # Script requries the pygtfs Python module.
 #
@@ -20,16 +20,18 @@
 #
 #------------------------------------------------------------------------------
 
-import datetime
 import pygtfs
 import os
+import my_utils
 
-start_time = datetime.datetime.now()
-print('\nStart at ' + str(start_time))
+start_time = my_utils.print_start_time()
+
+GTFS_folder = 'agency/'
 
 # Select input feed folder and output database
-gtfs_feed= r"C:\GTFS\ValleyMetro"
-output_sqlite = r"C:\GTFS\GTFS-Test.sqlite"
+dir_path = os.getcwd()
+gtfs_feed= os.path.join(dir_path,GTFS_folder)
+output_sqlite = 'gtfs.sqlite'
 
 #Delete sqlite output if it already exists
 try:
@@ -45,8 +47,6 @@ print(sched)
 #Ingest GTFS feed into sqlite file
 pygtfs.append_feed(sched, gtfs_feed)
 
-print ("Done creating sqlite file")
+print("Done creating sqlite file")
 
-end_time = datetime.datetime.now()
-total_time = end_time - start_time
-print ("\nEnd at {}.  Total run time {}".format(end_time, total_time))
+my_utils.print_end_time(start_time)
