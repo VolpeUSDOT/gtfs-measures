@@ -1,4 +1,18 @@
-# -*- coding: utf-8 -*-
+#------------------------------------------------------------------------------
+# Name:        Conflate Statistics
+#
+# Purpose:     This function combines real data for a transit system and the 
+#              various demographic data (from the 03_ labeled functions) for
+#              ease of manipulation later.
+#
+# Author:      Stephen Zitzow-Childs
+#
+# Created:     Sprint 2017
+# Updated:     7/19/2017
+#
+# Volpe National Transportation Systems Center
+# United States Department of Transportation
+#------------------------------------------------------------------------------
 
 import sqlite3
 import datetime

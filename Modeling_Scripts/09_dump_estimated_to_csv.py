@@ -1,4 +1,17 @@
-# -*- coding: utf-8 -*-
+#------------------------------------------------------------------------------
+# Name:        Dump Estimated to CSV
+#
+# Purpose:     This function exports estimated ridership data to a csv for 
+#              integration with mapping functions in ArcGIS.
+#
+# Author:      Stephen Zitzow-Childs
+#
+# Created:     Sprint 2017
+# Updated:     7/19/2017
+#
+# Volpe National Transportation Systems Center
+# United States Department of Transportation
+#------------------------------------------------------------------------------
 
 import csv
 import sqlite3

@@ -1,4 +1,18 @@
-# -*- coding: utf-8 -*-
+#------------------------------------------------------------------------------
+# Name:        Join to All
+#
+# Purpose:     This function combines data from all systems into a single 
+#              database file for analysis.  Hard-coded NTD total system-mode
+#              level ridership are incorporated in this function as well.
+#
+# Author:      Stephen Zitzow-Childs
+#
+# Created:     Sprint 2017
+# Updated:     7/19/2017
+#
+# Volpe National Transportation Systems Center
+# United States Department of Transportation
+#------------------------------------------------------------------------------
 
 import sqlite3
 

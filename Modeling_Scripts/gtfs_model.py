@@ -1,4 +1,18 @@
-# -*- coding: utf-8 -*-
+#------------------------------------------------------------------------------
+# Name:        CompositePlot
+#
+# Purpose:     This file includes functions related to model analysis and 
+#              figure generation to support functions number 06_ and later.  
+#              Individual function short descriptions are provided below.
+#
+# Author:      Stephen Zitzow-Childs
+#
+# Created:     Sprint 2017
+# Updated:     7/19/2017
+#
+# Volpe National Transportation Systems Center
+# United States Department of Transportation
+#------------------------------------------------------------------------------
 
 import statsmodels.formula.api as sm
 import sqlite3
@@ -8,6 +22,7 @@ import numpy as np
 import pandas as pd
 import csv
 
+# Plot real versus estimated ridership with a 45 degree line for perfect match
 def plot_comparison(real, estimated, ax_max, route_type_string, adj_rsquared, runname):
      plt.figure()
      plt.subplot(111)
@@ -23,6 +38,8 @@ def plot_comparison(real, estimated, ax_max, route_type_string, adj_rsquared, ru
      plt.show()
      return
 
+# Plot real versus estimated ridership with a 45 degree line for perfect match,
+# but with each agency colorized individually
 def plot_comparison_colored(bart, lirr, mbta, mpls, naipta, sjrtd, valley, ax_max, route_type_string, adj_rsquared, runname):
      plt.figure()
      plt.subplot(111)
@@ -53,6 +70,8 @@ def plot_comparison_colored(bart, lirr, mbta, mpls, naipta, sjrtd, valley, ax_ma
      plt.show()
      return
 
+# Retrieve data from a database according to route type and, optionally, 
+# according to an inclusive of exclusion list of agencies
 def get_all_from_db(db_name, route_type, exclude = 'None', include = 'None'):
 
      # Retrieve data
@@ -282,6 +301,7 @@ def get_all_from_db(db_name, route_type, exclude = 'None', include = 'None'):
      
      return(df)
 
+# Produce a summary csv for a model calibration fit
 def write_csv_summary(runname, route_type_string, formula_string, adj_rsquared, selected_features, coefficients, pvals):
      with open('%s.csv' % runname,'wb') as csvfile:
           outfile = csv.writer(csvfile,delimiter=',')
@@ -297,6 +317,7 @@ def write_csv_summary(runname, route_type_string, formula_string, adj_rsquared, 
                
      return
 
+# Using a fitted model, estimate riderhsip by stop-pair
 def estimate_ridership(df, selected_features, coefficients):
      estimated = df[['from_stop','to_stop']].copy()
      estimated['est'] = np.zeros((len(estimated),1))
@@ -325,7 +346,7 @@ def prepare_model_strings(route_type, selected_features):
                formula_string = formula_string + ' + ' + elem
      return {'rts':route_type_string,'fs':formula_string}
 
-
+# Write ridership estimation to a database
 def write_sql_summary(database, runname, data):
      conn = sqlite3.connect(database)
      db_cursor = conn.cursor()
@@ -343,6 +364,7 @@ def write_sql_summary(database, runname, data):
      
      return {'out':outdata,'in':data}
 
+# Perform a model calibration
 def calibrate_with_settings(route_type, selected_features, runname, exclude = 'None', include = 'None'):
 
      prep_strings = prepare_model_strings(route_type, selected_features)
@@ -352,12 +374,7 @@ def calibrate_with_settings(route_type, selected_features, runname, exclude = 'N
      
      df = get_all_from_db('GTFS-ALL.sqlite', route_type, exclude, include)
      
-     # Model Variants
-     #--------------------
-     # Model Variant 1 - Everything and the kitchen sink
-     # Every element is included, even with covariance problems
-     #--------------------
-     
+     # The actual model fitting
      result = sm.ols(formula=formula_string,data=df).fit()
      
      coefficients = result.params
@@ -380,6 +397,7 @@ def calibrate_with_settings(route_type, selected_features, runname, exclude = 'N
      
      return (sqlresults)
 
+# Find adjusted R-squared statistic
 def calculate_adj_rsquared(real, estimated, n, p):
      mean_real = real.mean()
      intermediate = pd.DataFrame()
@@ -394,10 +412,12 @@ def calculate_adj_rsquared(real, estimated, n, p):
      adj_r_squared = 1 - ((ssres/dfe) / (sstot/dft))
      return (adj_r_squared)
 
+# Close plots
 def clear_plots():
      plt.cla()
      return
 
+# Load a calibration csv
 def load_calibration(runname):
      with open('%s.csv' % runname,'rb') as csvfile:
           infile = csv.reader(csvfile,delimiter=',')

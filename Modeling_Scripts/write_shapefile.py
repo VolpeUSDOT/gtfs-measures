@@ -1,3 +1,5 @@
+# Testing function to interface data with ArcGIS
+
 import arcpy
 
 def createSegments(segmentcoords):

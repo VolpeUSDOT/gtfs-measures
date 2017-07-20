@@ -1,6 +1,24 @@
-# -*- coding: utf-8 -*-
-
-
+#------------------------------------------------------------------------------
+# Name:        Add LODES Features
+#
+# Purpose:     This function takes stop/station 1/4-mile-shed demographic 
+#              information taken from the US Census Bureau's LEHD Origin-
+#              Destination Employment Statistics data set and imports it
+#              to a system's database file for later analysis.  The features 
+#              include jobs according to income level and a series of 
+#              classification groups for the region immediately surrounding 
+#              each stop or station within a system's transit network.  Data 
+#              were compiled within an ArcGIS framework, and provided to this 
+#              script in a preformatted csv.
+#
+# Author:      Stephen Zitzow-Childs
+#
+# Created:     Sprint 2017
+# Updated:     7/19/2017
+#
+# Volpe National Transportation Systems Center
+# United States Department of Transportation
+#------------------------------------------------------------------------------
 
 import csv
 import sqlite3

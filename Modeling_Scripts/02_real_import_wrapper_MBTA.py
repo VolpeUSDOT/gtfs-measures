@@ -1,3 +1,19 @@
+#------------------------------------------------------------------------------
+# Name:        Real Import Wrapper for MBTA
+#
+# Purpose:     This function interfaces with a csv containing ridership data
+#              provided by Boston's Massachusetts Bay Transportation Authority.
+#              This function only processes bus service data, which is provided
+#              on a trip-stop level.
+#
+# Author:      Stephen Zitzow-Childs
+#
+# Created:     Winter 2016
+# Updated:     7/19/2017
+#
+# Volpe National Transportation Systems Center
+# United States Department of Transportation
+#------------------------------------------------------------------------------
 
 import sqlite3
 import datetime

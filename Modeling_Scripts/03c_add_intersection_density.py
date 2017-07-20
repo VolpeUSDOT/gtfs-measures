@@ -1,5 +1,19 @@
-
-
+#------------------------------------------------------------------------------
+# Name:        Add Intersection Density
+#
+# Purpose:     This function takes stop/station 1/4-mile-shed intersection 
+#              count around each station/stop within a system's transit 
+#              network.  The counts were developed using the ARNOLD network 
+#              within an ArcGIS framework.
+#
+# Author:      Stephen Zitzow-Childs
+#
+# Created:     Sprint 2017
+# Updated:     7/19/2017
+#
+# Volpe National Transportation Systems Center
+# United States Department of Transportation
+#------------------------------------------------------------------------------
 
 import csv
 import sqlite3

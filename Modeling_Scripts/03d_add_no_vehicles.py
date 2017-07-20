@@ -1,5 +1,22 @@
-
-
+#------------------------------------------------------------------------------
+# Name:        Add No Vehicles
+#
+# Purpose:     This function takes stop/station 1/4-mile-shed demographic 
+#              information taken from the US Census Bureau's American Community 
+#              Survey data and imports it to a system's database file for later 
+#              analysis.  The features include number of households which do
+#              and do not have vehicle access.  Data were compiled within an 
+#              ArcGIS framework, and provided to this script in a 
+#              preformatted csv.
+#
+# Author:      Stephen Zitzow-Childs
+#
+# Created:     Sprint 2017
+# Updated:     7/19/2017
+#
+# Volpe National Transportation Systems Center
+# United States Department of Transportation
+#------------------------------------------------------------------------------
 
 import csv
 import sqlite3

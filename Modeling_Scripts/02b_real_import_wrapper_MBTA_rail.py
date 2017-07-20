@@ -1,3 +1,19 @@
+#------------------------------------------------------------------------------
+# Name:        Real Import Wrapper for MBTA Rail
+#
+# Purpose:     This function interfaces with a csv containing ridership data
+#              provided by Boston's Massachusetts Bay Transportation Authority.
+#              This function only processes rail service only, in the form of
+#              trip-station level data.
+#
+# Author:      Stephen Zitzow-Childs
+#
+# Created:     Sprint 2017
+# Updated:     7/19/2017
+#
+# Volpe National Transportation Systems Center
+# United States Department of Transportation
+#------------------------------------------------------------------------------
 
 import sqlite3
 import datetime

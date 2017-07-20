@@ -1,3 +1,19 @@
+#------------------------------------------------------------------------------
+# Name:        Real Import Wrapper for MPLS
+#
+# Purpose:     This function interfaces with a csv containing ridership data
+#              published by Minneapolis-Saint Paul's MetroTransit.  The data is
+#              published in the form of route-stop level data (aggregated daily
+#              totals).
+#
+# Author:      Stephen Zitzow-Childs
+#
+# Created:     Winter 2016
+# Updated:     7/19/2017
+#
+# Volpe National Transportation Systems Center
+# United States Department of Transportation
+#------------------------------------------------------------------------------
 
 import sqlite3
 import datetime

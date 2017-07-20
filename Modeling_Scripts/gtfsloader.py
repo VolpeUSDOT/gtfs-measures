@@ -1,6 +1,23 @@
+#------------------------------------------------------------------------------
+# Name:        GTFSLoader
+#
+# Purpose:     This function (possibly redundant) reloads stops.txt GTFS data
+#              manually to fix issues with the pygtfs loading algorithm 
+#              found in 00_gtfs_ingest_sqlite.  Specifically, parent stations 
+#              are stripped in the ingester function, and are required for
+#              certain analyses within this framework.
+#
+# Author:      Stephen Zitzow-Childs
+#
+# Created:     Winter 2016
+# Updated:     7/19/2017
+#
+# Volpe National Transportation Systems Center
+# United States Department of Transportation
+#------------------------------------------------------------------------------
+
 import csv
 
-#------------------------------------------------------------------------------------------------------
 # Loader for the stops.txt data
 def stops_gtfs(folder):
     print '... Loading Stops from GTFS'
@@ -51,4 +68,3 @@ def stops_gtfs(folder):
                                               row[c_lat],row[c_lon],row[c_loc_type],row[c_parent]]))
             counter += 1
     return (stops)
-#------------------------------------------------------------------------------------------------------

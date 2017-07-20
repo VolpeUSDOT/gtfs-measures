@@ -1,5 +1,17 @@
-
-# -*- coding: utf-8 -*-
+#------------------------------------------------------------------------------
+# Name:        CompositePlot
+#
+# Purpose:     This function produces a figure showing modeled versus real
+#              riderhsip data for all systems, color coded by agency.
+#
+# Author:      Stephen Zitzow-Childs
+#
+# Created:     Sprint 2017
+# Updated:     7/19/2017
+#
+# Volpe National Transportation Systems Center
+# United States Department of Transportation
+#------------------------------------------------------------------------------
 
 import gtfs_model
 import datetime

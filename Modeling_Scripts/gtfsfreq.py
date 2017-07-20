@@ -1,13 +1,28 @@
+#------------------------------------------------------------------------------
+# Name:        GTFSFreq
 #
+# Purpose:     This file includes two functions which tally stop-to-stop and 
+#              stop-level frequency, accounting for route shape information for
+#              stop segments.
+#
+# Author:      Stephen Zitzow-Childs
+#
+# Created:     Winter 2016
+# Updated:     7/19/2017
+#
+# Volpe National Transportation Systems Center
+# United States Department of Transportation
+#------------------------------------------------------------------------------
+
+import myprint
+
+#---
 # Function to parse through a list of segment information in the form:
 #    from_stop, to_stop, shape_id, route_type, route_id
 # 
 # Output is unique lists of segments with frequency and number of routes based on:
 #    from_stop, to_stop, route_type      and
 #    from_stop, to_stop, route_type, shape_id
-
-import myprint
-
 def calculateSegmentFrequency(all_segments):
      prev_from = []
      prev_to = []
@@ -63,14 +78,13 @@ def calculateSegmentFrequency(all_segments):
      
      return (from_to_type_results, from_to_type_shape_results)
 
-#
+#---
 # Function to parse through a list of segment information in the form:
 #    from_stop, to_stop, shape_id, route_type, route_id
 # 
 # Output is unique lists of segments with frequency and number of routes based on:
 #    from_stop, to_stop, route_type      and
 #    from_stop, to_stop, route_type, shape_id
-
 def calculateStopFrequency(all_stops):
      stop_freq = []
      

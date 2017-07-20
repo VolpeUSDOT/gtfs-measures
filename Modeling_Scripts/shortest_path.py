@@ -1,4 +1,18 @@
-# -*- coding: utf-8 -*-
+#------------------------------------------------------------------------------
+# Name:        Shortest Path
+#
+# Purpose:     This file implements the Djikstra shortest path algorithm for
+#              pathing related to the BART system data. Certain BART elements
+#              are hard coded.
+#
+# Author:      Stephen Zitzow-Childs
+#
+# Created:     Sprint 2017
+# Updated:     7/19/2017
+#
+# Volpe National Transportation Systems Center
+# United States Department of Transportation
+#------------------------------------------------------------------------------
 
 # This function finds the shortest path between two nodes and lists the resulting path and path length; algorith is djikstra
 def rebuildpath(tracker, startnode, endnode):

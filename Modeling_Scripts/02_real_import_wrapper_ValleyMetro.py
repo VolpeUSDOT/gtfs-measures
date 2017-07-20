@@ -1,3 +1,19 @@
+#------------------------------------------------------------------------------
+# Name:        Real Import Wrapper for ValleyMetro
+#
+# Purpose:     This function interfaces with a csv containing ridership data
+#              provided by Phoenix's Valley Metro Regional Public 
+#              Transportation Authority (Valley Metro).  Data was provided at 
+#              the route-stop level.
+#
+# Author:      Stephen Zitzow-Childs
+#
+# Created:     Winter 2016
+# Updated:     7/19/2017
+#
+# Volpe National Transportation Systems Center
+# United States Department of Transportation
+#------------------------------------------------------------------------------
 
 import sqlite3
 import datetime

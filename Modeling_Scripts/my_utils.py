@@ -7,7 +7,7 @@
 # Volpe National Transportation Systems Center, USDOT
 #
 # Last modified: 6/18/2017
-#
+# Note: Newer version of this needs to be loaded and incorporated (7/20/2017)
 #-------------------------------------------------------------
 
 import sys

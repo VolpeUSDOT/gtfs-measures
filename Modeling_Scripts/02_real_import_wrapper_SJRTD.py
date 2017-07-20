@@ -1,3 +1,19 @@
+#------------------------------------------------------------------------------
+# Name:        Real Import Wrapper for SJRTD
+#
+# Purpose:     This function interfaces with a csv containing ridership data
+#              provided by Stockton, California's San Joaquin Regional Transit
+#              District (SJRTD).  A sample of trip-stop level data from 
+#              several routes were provided for analysis.
+#
+# Author:      Stephen Zitzow-Childs
+#
+# Created:     Winter 2016
+# Updated:     7/19/2017
+#
+# Volpe National Transportation Systems Center
+# United States Department of Transportation
+#------------------------------------------------------------------------------
 
 import sqlite3
 import datetime

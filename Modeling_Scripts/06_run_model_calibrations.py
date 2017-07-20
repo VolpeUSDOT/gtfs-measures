@@ -1,3 +1,21 @@
+#------------------------------------------------------------------------------
+# Name:        Run Model Calibrations
+#
+# Purpose:     This function produces calibration statistics and exports 
+#              results for a series of model layouts.  The models are all
+#              simple linear combinations of all or a subset of the features
+#              produced or compiled for each transit system.
+#
+# Author:      Stephen Zitzow-Childs
+#
+# Created:     Sprint 2017
+# Updated:     7/19/2017
+#
+# Volpe National Transportation Systems Center
+# United States Department of Transportation
+#------------------------------------------------------------------------------
+
+
 # This works for linear combination (and we can manually manipulate individual
 # elements to create polynomial or exponential components in a limited way)
 import datetime

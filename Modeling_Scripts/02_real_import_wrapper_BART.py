@@ -1,3 +1,20 @@
+#------------------------------------------------------------------------------
+# Name:        Real Import Wrapper for BART
+#
+# Purpose:     This function interfaces with a csv containing ridership data
+#              published by San Francisco's Bay Area Rapid Transit (BART)
+#              subway system.  The data is in the form of monthly total flows 
+#              between nodes on the network (as an O/D matrix).  The data is 
+#              placed into a database in a uniform format for later analysis.
+#
+# Author:      Stephen Zitzow-Childs
+#
+# Created:     Winter 2016
+# Updated:     7/19/2017
+#
+# Volpe National Transportation Systems Center
+# United States Department of Transportation
+#------------------------------------------------------------------------------
 
 import sqlite3
 import datetime
@@ -5,6 +22,7 @@ import csv
 import xlrd
 import shortest_path
 
+# Simple matching for names
 def findMatch(shortname, namelist):
      matchval = []
      for row in namelist:

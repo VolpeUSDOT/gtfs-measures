@@ -1,4 +1,18 @@
-# -*- coding: utf-8 -*-
+#------------------------------------------------------------------------------
+# Name:        Estimate Ridership from Model
+#
+# Purpose:     This function takes calibration data produced by 
+#              06_run_model_calibrations and produces model-estimated ridership
+#              for every stop-to-stop pair within a transit network.
+#
+# Author:      Stephen Zitzow-Childs
+#
+# Created:     Sprint 2017
+# Updated:     7/19/2017
+#
+# Volpe National Transportation Systems Center
+# United States Department of Transportation
+#------------------------------------------------------------------------------
 
 import gtfs_model
 import datetime

@@ -1,3 +1,19 @@
+#------------------------------------------------------------------------------
+# Name:        Real Import Wrapper for NAIPTA
+#
+# Purpose:     This function interfaces with a csv containing ridership data
+#              provided by Flagstaff's Northern Arizona Intergovernmental 
+#              Public Transportation Authority (NAIPTA).  Data is at the 
+#              route-stop level, aggregated to day totals.
+#
+# Author:      Stephen Zitzow-Childs
+#
+# Created:     Winter 2016
+# Updated:     7/19/2017
+#
+# Volpe National Transportation Systems Center
+# United States Department of Transportation
+#------------------------------------------------------------------------------
 
 import sqlite3
 import datetime
