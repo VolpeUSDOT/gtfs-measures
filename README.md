@@ -3,10 +3,13 @@
 This repository contains the code that the U.S. DOT Volpe Center and Office of the U.S DOT Undersecretary for Policy developed for their proof-of-concept project exploring how General Transit Feed Specification (GTFS) public schedule data, widely available from transit agencies and now through the National Transit Map, could be used to estimate road segment-level transit ridership and support multimodal performance measures.
 
 ## Usage
-
 This code estimates segment-level transit service characteristics (e.g. frequency, ridership at the level of individual road segments) based on GTFS feeds and other inputs.
 
 ## Link to Associated Report
+
+### Components
+- Modeling Scripts: Ingests GTFS, calibration ridership data, and predictive inputs to build a model for frequency and ridership.
+- Spatial Scripts: Prepares a segment-based network of roads that can be attached to transit service and estimated characteristics from the modeling scripts.
 
 ## Code Dependencies
 - Python
@@ -19,6 +22,7 @@ This code estimates segment-level transit service characteristics (e.g. frequenc
 - For ridership estimation: measured transit ridership data to calibrate the estimation model. While this project also used additional ridership data that transit agencies provided directly, the following agencies provide segment-level ridership as open data to the public:
  - [Twin Cities Metro Transit](ftp://ftp.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_metc/trans_stop_boardings_alightings/metadata/metadata.html)
  - [Bay Area Rapid Transit](https://www.bart.gov/about/reports/ridership)
+ - For ridership estimation: Various data that may predict ridership from the U.S. Census and other national inputs as described in this project's full report. Code is designed to be modified to allow for other predictive datasets to be used.
 
 
 ## Documentation
