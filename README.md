@@ -12,7 +12,8 @@ This code estimates segment-level transit service characteristics (e.g. frequenc
 - Spatial Scripts: Prepares a segment-based network of roads that can be attached to transit service and estimated characteristics from the modeling scripts.
 
 ## Code Dependencies
-- Python
+- [Python](https://www.python.org/)
+- [ArcPy](http://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-arcpy-.htm) (part of ArcGIS)
 - [pygtfs](https://github.com/jarondl/pygtfs)
 - [sqlite3](https://www.sqlite.org/)
 
