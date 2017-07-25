@@ -5,7 +5,7 @@ This repository contains the code that the U.S. DOT Volpe Center and Office of t
 ## Link to Associated Report
 
 ## Usage
-This code estimates segment-level transit service characteristics (e.g. frequency, ridership at the level of individual road segments) based on GTFS feeds and other inputs, mapping the results spatially. For bus transit, it attaches these characteristics to the underlying road network for easy comparison to vehicular Average Annual Daily Traffic (AADT) data avaialable from states, other local agencies, and the [Federal Highway Administration](https://www.fhwa.dot.gov/policyinformation/hpms.cfm). We encourage transit agencies, states, or other agencies to use, adapt, and contribute to this code if they find it useful in understanding and managing their transportation system. 
+This code estimates segment-level transit service characteristics (e.g. frequency, ridership at the level of individual road segments) based on GTFS feeds and other inputs, mapping the results spatially. For bus transit, it attaches these characteristics to the underlying road network for easy comparison to vehicular Average Annual Daily Traffic (AADT) data available from states, other local agencies, and the [Federal Highway Administration](https://www.fhwa.dot.gov/policyinformation/hpms.cfm). We encourage transit agencies, states, or other agencies to use, adapt, and contribute to this code if they find it useful in understanding and managing their transportation system.
 
 ### Components
 - Modeling Scripts: Ingests GTFS, calibration ridership data, and predictive inputs to build a model for frequency and ridership.
@@ -31,7 +31,7 @@ This code is primarily documented through in-line comments, with some additional
 - [GTFS to Road Network (ARNOLD) Snapping](https://github.com/VolpeUSDOT/gtfs-measures/blob/master/docs/GTFS_Script_Documentation.md)
 
 ## Getting involved
-This public-domain code was developed as part of a proof-of-concept project, and we encourage transit agencies, state DOTs, or other interested parties to consider how these tools to estimate ridership and calculate multimodal performance measures might be useful to them. We also welcome contributions back into this repoistory as a building block for peers. See [LICENSE](LICENSE),  [CONTRIBUTING](CONTRIBUTING.md), and [TERMS](TERMS.md).
+This public-domain code was developed as part of a proof-of-concept project, and we encourage transit agencies, state DOTs, or other interested parties to consider how these tools to estimate ridership and calculate multimodal performance measures might be useful to them. We also welcome contributions back into this repository as a building block for peers. See [LICENSE](LICENSE),  [CONTRIBUTING](CONTRIBUTING.md), and [TERMS](TERMS.md).
 
 If you have questions about the code or the project, feel free to open an Issue on this repository.
 
