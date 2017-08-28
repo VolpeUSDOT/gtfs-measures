@@ -31,6 +31,7 @@ This code estimates segment-level transit service characteristics (e.g. frequenc
 ## Documentation
 This code is primarily documented through in-line comments, with some additional documentation listed below:
 - [GTFS to Road Network (ARNOLD) Snapping](https://github.com/VolpeUSDOT/gtfs-measures/blob/master/docs/GTFS_Script_Documentation.md)
+- [Ridership Modeling](https://github.com/VolpeUSDOT/gtfs-measures/blob/master/docs/GTFS_Model_Scripts_Documentation.md)
 
 ## Getting involved
 This public-domain code was developed as part of a proof-of-concept project, and we encourage transit agencies, state DOTs, or other interested parties to consider how these tools to estimate ridership and calculate multimodal performance measures might be useful to them. We also welcome contributions back into this repository as a building block for peers. See [LICENSE](LICENSE),  [CONTRIBUTING](CONTRIBUTING.md), and [TERMS](TERMS.md).
