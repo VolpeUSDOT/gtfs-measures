@@ -23,7 +23,7 @@ This code estimates segment-level transit service characteristics (e.g. frequenc
 - GTFS Data from the [U.S. DOT National Transit Map](https://www.rita.dot.gov/bts/ntm)
 - Federal Highway Administration's [All Roads Network of Linear Referenced Data](https://www.fhwa.dot.gov/policyinformation/hpms/arnold.cfm) (ARNOLD). (Note: the full geospatial data for this network is not yet available to the public. However, the project code could be modified to use state-specific roads data or other national roads data)
 - For ridership estimation: measured transit ridership data to calibrate the estimation model. While this project also used additional ridership data that transit agencies provided directly, the following agencies provide segment-level ridership as open data to the public:
-  - [Twin Cities Metro Transit](ftp://ftp.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_metc/trans_stop_boardings_alightings/metadata/metadata.html)
+  - [Twin Cities Metro Transit](https://gisdata.mn.gov/dataset/us-mn-state-metc-trans-stop-boardings-alightings)
   - [Bay Area Rapid Transit](https://www.bart.gov/about/reports/ridership)
 - For ridership estimation: Various data that may predict ridership from the U.S. Census and other national inputs as described in this project's full report. Code is designed to be modified to allow for other predictive datasets to be used.
 
