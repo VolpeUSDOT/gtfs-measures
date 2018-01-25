@@ -4,7 +4,7 @@ This repository contains the code that the U.S. DOT Volpe Center and Office of t
 
 ## Link to Associated Report
 
-The [full report](https://ntlrepository.blob.core.windows.net/lib/63000/63700/63740/DOT-VNTSC-OSTR-17-03.pdf) is available from the National Transportation Library.
+The [full report](https://rosap.ntl.bts.gov/view/dot/34279) is available from the National Transportation Library.
 
 ## Usage
 This code estimates segment-level transit service characteristics (e.g. frequency, ridership at the level of individual road segments) based on GTFS feeds and other inputs, mapping the results spatially. For bus transit, it attaches these characteristics to the underlying road network for easy comparison to vehicular Average Annual Daily Traffic (AADT) data available from states, other local agencies, and the [Federal Highway Administration](https://www.fhwa.dot.gov/policyinformation/hpms.cfm). We encourage transit agencies, states, or other agencies to use, adapt, and contribute to this code if they find it useful in understanding and managing their transportation system.
